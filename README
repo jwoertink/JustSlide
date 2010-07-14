@@ -1,0 +1,31 @@
+jQuery "Just Slide" content slider.
+
+Usage:
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.justslide.js"></script>
+	<script type="text/javascript">
+		//More options to come later
+	 	var options = {
+			display: 2, // This is the number of items to show at any given time. Default is 2
+			slide: 1, // This is how many items to slide to the left or right at a time. Default is 1
+			speed: 'slow', // This is the speed of the animation. Any normal jquery speed
+			next: '#my_next_link', // If you don't supply this, you can't move next :p
+			prev: '#my_prev_link' // If you don't supply this, you can't move back :p
+		}
+		jQuery(function() {
+			$('#slider').justslide(options);
+		});
+	</script>
+	
+ 	This could easily be a "ul" tag.
+ 	The inner slides don't need a class on them. 
+
+ 	<div id="slider">
+		<div class="slide">stuff in here</div>
+		<div class="slide">more stuff in here</div>
+		<div class="slide">even more stuff in here</div>
+	</div>
+	
+	
+	
