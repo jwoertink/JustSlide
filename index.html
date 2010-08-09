@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JustSlide Test Page</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+  </head>
+  <body>
+    <div id="examples">
+      <h1>JustSlide jQuery Slider</h1>
+      <h2>What is it?</h2>
+      <p>A jQuery slider plugin. Used to take a list of elements, and show a small amount of them, then using a sliding animation, display new ones.</p>
+      <br />
+      <h2>Why another slider?</h2>
+      <p>There are some really great plugins out there that do this exact same thing. A lot of the are jam packed full of features you will never use. Others require specific markup. Some need an external css file to function properly. Others have no good documentation, and I couldn't figure out how to make them work. Plus, this is a good exercise for me!</p>
+      <br />
+      <h2>How does it work?</h2>
+      <p>The following are a few examples of how you could use this.</p>
+      <br />
+      <h3>Example 1. Nothing fancy</h3>
+      <div id="example1">
+        <img src="flower1.jpg" width="220" height="224" />
+        <img src="flower2.jpg" width="220" height="224" />
+        <img src="flower3.jpg" width="220" height="224" />
+        <img src="flower4.jpg" width="220" height="224" />
+      </div>
+      <br /><br />
+      <h3>Example 2. Using &lt;ul&gt; instead of &lt;div&gt;</h3>
+      <div id="example2">
+        <ul class="slider">
+          <li><img src="flower1.jpg" width="220" height="224" /></li>
+          <li><img src="flower2.jpg" width="220" height="224" /></li>
+          <li><img src="flower3.jpg" width="220" height="224" /></li>
+          <li><img src="flower4.jpg" width="220" height="224" /></li>
+        </ul>
+      </div>
+      <br /><br />
+      <h3>Example 3. Lots of images and options</h3>
+      <div id="example3">
+        <img src="flower1.jpg" width="220" height="224" />
+        <img src="flower2.jpg" width="220" height="224" />
+        <img src="flower3.jpg" width="220" height="224" />
+        <img src="flower4.jpg" width="220" height="224" />
+        <img src="flower1.jpg" width="220" height="224" />
+        <img src="flower2.jpg" width="220" height="224" />
+        <img src="flower3.jpg" width="220" height="224" />
+        <img src="flower4.jpg" width="220" height="224" />
+      </div>
+      <button id="prev-btn">Scroll Right</button>
+      <button id="next-btn">Scroll Left</button>
+    </div>
+    <div id="footer">
+      &copy; 2010 <a href="http://twitter.com/jeremywoertink">Jeremy Woertink</a>
+    </div>
+    <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery.justslide.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        $('#example1').justslide();
+        $('#example2 .slider').justslide();
+        $('#example3').justslide({
+          display: 3,
+          slide: 2,
+          speed: 'fast',
+          next: '#next-btn',
+          prev: '#prev-btn'
+        });
+      })
+    </script>
+  </body>
+</html>

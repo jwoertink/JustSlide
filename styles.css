@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 14px;
+	font-family: Arial;
+	color: #333333;
+	background-color: #d7d7d7;
+}
+#examples {
+	margin: 40px auto;
+	width: 980px;
+}
+#footer {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 20px;
+	font-size: 12px;
+}
+#footer a {
+	color: #609EFC;
+	text-decoration: none;
+}
