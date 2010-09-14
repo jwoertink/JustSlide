@@ -17,6 +17,11 @@
       <p>The following are a few examples of how you could use this.</p>
       <br />
       <h3>Example 1. Nothing fancy</h3>
+<pre>
+  $(function() {
+    $('#example1').justslide();
+  });
+</pre>
       <div id="example1">
         <img src="flower1.jpg" width="220" height="224" />
         <img src="flower2.jpg" width="220" height="224" />
@@ -25,6 +30,11 @@
       </div>
       <br /><br />
       <h3>Example 2. Using &lt;ul&gt; instead of &lt;div&gt;</h3>
+<pre>
+  $(function() {
+    $('#example2 .slider').justslide();
+  });
+</pre>
       <div id="example2">
         <ul class="slider">
           <li><img src="flower1.jpg" width="220" height="224" /></li>
@@ -35,15 +45,50 @@
       </div>
       <br /><br />
       <h3>Example 3. Lots of images and options</h3>
+<pre>
+  $(function() {
+    $('#example3').justslide({
+      display: 3,
+      slide: 2,
+      speed: 'fast',
+      next: '#next-btn',
+      prev: '#prev-btn'
+    });
+  });
+</pre>
       <div id="example3">
-        <img src="flower1.jpg" width="220" height="224" />
-        <img src="flower2.jpg" width="220" height="224" />
-        <img src="flower3.jpg" width="220" height="224" />
-        <img src="flower4.jpg" width="220" height="224" />
-        <img src="flower1.jpg" width="220" height="224" />
-        <img src="flower2.jpg" width="220" height="224" />
-        <img src="flower3.jpg" width="220" height="224" />
-        <img src="flower4.jpg" width="220" height="224" />
+        <div class="some_random_class_name">
+          <img src="flower1.jpg" width="220" height="224" /><br />
+          <h3>Some Name</h3>
+        </div>
+        <div class="some_random_class_name">
+          <img src="flower2.jpg" width="220" height="224" /><br />
+          <h3>Another Name</h3>
+        </div>
+        <div class="some_random_class_name">
+          <img src="flower3.jpg" width="220" height="224" /><br />
+          <h3>More Name</h3>
+        </div>
+        <div class="some_random_class_name">
+          <img src="flower4.jpg" width="220" height="224" /><br />
+          <h3>Better Name</h3>
+        </div>
+        <div class="some_random_class_name">
+          <img src="flower1.jpg" width="220" height="224" /><br />
+          <h3>Cool Name</h3>
+        </div>
+        <div class="some_random_class_name">
+          <img src="flower2.jpg" width="220" height="224" /><br />
+          <h3>Sweet Name</h3>
+        </div>
+        <div class="some_random_class_name">
+          <img src="flower3.jpg" width="220" height="224" /><br />
+          <h3>Hot Name</h3>
+        </div>
+        <div class="some_random_class_name">
+          <img src="flower4.jpg" width="220" height="224" /><br />
+          <h3>BANGARANG PETER!</h3>
+        </div>
       </div>
       <button id="prev-btn">Scroll Right</button>
       <button id="next-btn">Scroll Left</button>

@@ -8,9 +8,18 @@ body {
 	color: #333333;
 	background-color: #d7d7d7;
 }
+pre {
+	border: 2px dashed #cccccc;
+	padding: 10px;
+	background-color: #000000;
+	color: #ffffff;
+}
 #examples {
 	margin: 40px auto;
 	width: 980px;
+}
+.some_random_class_name {
+	text-align: center;
 }
 #footer {
 	text-align: center;

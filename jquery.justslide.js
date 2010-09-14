@@ -1,7 +1,7 @@
 /*
  * jQuery "JustSlide" content slider plug-in 0.2
  *
- * http://blog.justprofessionals.com/THIS_IS_WHERE_MY_POST_WILL_GO
+ * http://blog.justprofessionals.com/just-professionals/just-slide-jquery-content-slider/
  * Copyright (c) 2010 Jeremy Woertink
  *
  * Dual licensed under the MIT and GPL licenses:
