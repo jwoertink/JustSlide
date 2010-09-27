@@ -1,5 +1,5 @@
 /*
- * jQuery "JustSlide" content slider plug-in 0.2
+ * jQuery "JustSlide" content slider plug-in 0.3
  *
  * http://blog.justprofessionals.com/just-professionals/just-slide-jquery-content-slider/
  * Copyright (c) 2010 Jeremy Woertink
@@ -60,13 +60,20 @@
 					'z-index': 2,
 					'top': 0
 				});
+				function spaceship(a,b) {
+					if(a.height < b.height) return -1;
+					if(a.height == b.height) return 0;
+					if(a.height > b.height) return 1;
+				}
+				
 				var childHeight = function() {
 					var height = 0;
-					height += $(slider).children().height();
-					height += parseInt($(slider).children().css('margin-top'), 10);
-					height += parseInt($(slider).children().css('margin-bottom'), 10);
-					height += parseInt($(slider).children().css('padding-top'), 10);
-					height += parseInt($(slider).children().css('padding-bottom'), 10);
+					var item = $(slider).children().sort(spaceship)[$(slider).children().length - 1];
+					height += $(item).height();
+					height += parseInt($(item).css('margin-top'), 10);
+					height += parseInt($(item).css('margin-bottom'), 10);
+					height += parseInt($(item).css('padding-top'), 10);
+					height += parseInt($(item).css('padding-bottom'), 10);
 					return height;
 				}
 				var childWidth = function() {
