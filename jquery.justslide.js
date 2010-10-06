@@ -1,5 +1,5 @@
 /*
- * jQuery "JustSlide" content slider plug-in 0.3
+ * jQuery "JustSlide" content slider plug-in 0.4
  *
  * http://blog.justprofessionals.com/just-professionals/just-slide-jquery-content-slider/
  * Copyright (c) 2010 Jeremy Woertink
