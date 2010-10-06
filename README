@@ -11,11 +11,12 @@ Usage:
 	<script type="text/javascript">
 		//More options to come later
 	 	var options = {
-			display: 2, // This is the number of items to show at any given time. Default is 2
-			slide: 1, // This is how many items to slide to the left or right at a time. Default is 1
-			speed: 'slow', // This is the speed of the animation. Any normal jQuery speed
-			next: '#my_next_link', // If you don't supply this, I'll make one for ya
-			prev: '#my_prev_link' // If you don't supply this, I'll make one for ya
+			display: 2 // This is the number of items to show at any given time. Default is 2
+			,slide: 1 // This is how many items to slide to the left or right at a time. Default is 1
+			,speed: 'slow' // This is the speed of the animation. Any normal jQuery speed
+			,next: '#my_next_link' // If you don't supply this, I'll make one for ya
+			,prev: '#my_prev_link' // If you don't supply this, I'll make one for ya
+			,autoSlide: false // Boolean. Defaults to false. Will make the slider move on it's own.
 		}
 		jQuery(function() {
 			$('#slider').justslide(options);

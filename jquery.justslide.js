@@ -21,36 +21,35 @@
 			slider.slide = options['slide'] || 1;
 			//This is the speed of the animation
 			slider.speed = options['speed'] || 'slow';
+			//Auto slide. Direction is to the left.
+			slider.autoSlide = options['autoSlide'] || false;
 			//Enable the slider if there are more than 1 child element
 			slider.enabled = ($(slider).children().length > 1) ? true : false;
 			slider.log = function(msg) {
 				if('console' in window) window.console.log(msg);
 			}
 			slider.prev = function(control) {
-				$(control).live('click', function() {
-					if(canMoveBack()) {
-						$(slider).children().animate({
-							left: '+='+Math.abs(parseInt(childWidth()), 10)
-						}, slider.speed);
-					} else {
-						// can't move back anymore... maybe a callback function?
-					}
-				
-					return false;
-				});
+				if(control != null) {
+					$(control).live('click', function() {
+						animatePrev();
+						return false;
+					});
+				} else {
+					animatePrev();
+				}
 			}
 			slider.next = function(control) {
-				$(control).live('click', function() {
-					if(canMoveNext()) {
-						$(slider).children().animate({
-							left: '-='+Math.abs(parseInt(childWidth()), 10)
-						}, slider.speed);
-					} else {
-						// can't move next anymore... maybe a callback function?
-					}
-				
-					return false;
-				});
+				if(control != null) {
+					$(control).live('click', function() {
+						animateNext();
+						return false;
+					});
+				} else {
+					animateNext();
+				}
+			}
+			slider.reset = function() {
+				animateReset();
 			}
 			if(slider.enabled) {
 				var childCount = $(slider).children().length;
@@ -100,6 +99,33 @@
 					$(e).css('left', left);
 					left += childWidth();
 				});
+				
+				var animateNext = function() {
+					if(canMoveNext()) {
+						$(slider).children().animate({
+							left: '-='+Math.abs(parseInt(childWidth()), 10)
+						}, slider.speed);
+					} else {
+						return false;
+					}
+				}
+				
+				var animatePrev = function() {
+					if(canMoveBack()) {
+						$(slider).children().animate({
+							left: '+='+Math.abs(parseInt(childWidth()), 10)
+						}, slider.speed);
+					} else {
+						return false;
+					}
+				}
+				
+				var animateReset = function() {
+					var offset = $(slider).children(':first').position().left;
+					$(slider).children().animate({
+						left: '+='+ Math.abs(offset)
+					}, 'slow');
+				}
 			
 				var canMoveBack = function() {
 					return (parseInt($(slider).children(':eq(0)').css('left'), 10)+childWidth() <= 0);
@@ -120,6 +146,16 @@
 				} else {
 					$(slider).after('<a href="#" class="prevSlide" rel="'+slider.selector+'">&larr; Previous</a>');
 					slider.prev('.prevSlide[rel^='+slider.selector+']');
+				}
+				
+				if(slider.autoSlide) {
+					setInterval(function() {
+						if(canMoveNext()) {
+							slider.next();
+						} else {
+							slider.reset();
+						}
+					}, 6000);
 				}
 
 			}	else {
