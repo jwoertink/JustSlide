@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
     <title>JustSlide Test Page</title>
@@ -102,7 +103,9 @@
     <script type="text/javascript" charset="utf-8">
       $(function() {
         $('#example1').justslide();
-        $('#example2 .slider').justslide();
+        $('#example2 .slider').justslide({
+          autoSlide: true
+        });
         $('#example3').justslide({
           display: 3,
           slide: 2,

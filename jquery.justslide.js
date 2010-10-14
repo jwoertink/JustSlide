@@ -102,7 +102,7 @@
 				
 				var animateNext = function() {
 					if(canMoveNext()) {
-						$(slider).children().animate({
+						$(slider).children().stop(true, true).animate({
 							left: '-='+Math.abs(parseInt(childWidth()), 10)
 						}, slider.speed);
 					} else {
@@ -112,7 +112,7 @@
 				
 				var animatePrev = function() {
 					if(canMoveBack()) {
-						$(slider).children().animate({
+						$(slider).children().stop(true, true).animate({
 							left: '+='+Math.abs(parseInt(childWidth()), 10)
 						}, slider.speed);
 					} else {
@@ -131,7 +131,7 @@
 					return (parseInt($(slider).children(':eq(0)').css('left'), 10)+childWidth() <= 0);
 				}
 				var canMoveNext = function() {
-					return (parseInt($(slider).children(':eq('+(childCount - 1)+')').css('left'), 10) - childWidth() >= 0);
+					return (parseInt($(slider).children(':eq('+(childCount - 1)+')').css('left'), 10) > childWidth());
 				}
 				
 				if($(options['next']).length > 0) {
