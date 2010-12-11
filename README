@@ -29,5 +29,10 @@ Usage:
 		<div class="slide">even more stuff in here</div>
 	</div>
 	
-	
+
+
+CURRENT ISSUES:
+
+  If 3 elements are shown, and there are 8 total. Sliding more then 1 at a time will result in there being a gap at the end of the slide.
+  
 	

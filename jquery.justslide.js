@@ -1,5 +1,5 @@
 /*
- * jQuery "JustSlide" content slider plug-in 0.4
+ * jQuery "JustSlide" content slider plug-in 0.5
  *
  * http://blog.justprofessionals.com/just-professionals/just-slide-jquery-content-slider/
  * Copyright (c) 2010 Jeremy Woertink
@@ -103,7 +103,7 @@
 				var animateNext = function() {
 					if(canMoveNext()) {
 						$(slider).children().stop(true, true).animate({
-							left: '-='+Math.abs(parseInt(childWidth()), 10)
+							left: '-='+Math.abs(parseInt(childWidth(), 10)  * slider.slide)
 						}, slider.speed);
 					} else {
 						return false;
@@ -113,7 +113,7 @@
 				var animatePrev = function() {
 					if(canMoveBack()) {
 						$(slider).children().stop(true, true).animate({
-							left: '+='+Math.abs(parseInt(childWidth()), 10)
+							left: '+='+Math.abs(parseInt(childWidth(), 10) * slider.slide)
 						}, slider.speed);
 					} else {
 						return false;
@@ -131,7 +131,8 @@
 					return (parseInt($(slider).children(':eq(0)').css('left'), 10)+childWidth() <= 0);
 				}
 				var canMoveNext = function() {
-					return (parseInt($(slider).children(':eq('+(childCount - 1)+')').css('left'), 10) > childWidth());
+					var pos = parseInt(childWidth() * (slider.display - 1));
+					return (parseInt($(slider).children(':eq('+(childCount - 1)+')').css('left'), 10) > pos);
 				}
 				
 				if($(options['next']).length > 0) {

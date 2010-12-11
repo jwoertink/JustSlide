@@ -33,7 +33,9 @@
       <h3>Example 2. Using &lt;ul&gt; instead of &lt;div&gt;</h3>
 <pre>
   $(function() {
-    $('#example2 .slider').justslide();
+    $('#example2 .slider').justslide({
+      autoSlide: true
+    });
   });
 </pre>
       <div id="example2">
@@ -103,9 +105,7 @@
     <script type="text/javascript" charset="utf-8">
       $(function() {
         $('#example1').justslide();
-        $('#example2 .slider').justslide({
-          autoSlide: true
-        });
+        $('#example2 .slider').justslide({autoSlide: true});
         $('#example3').justslide({
           display: 3,
           slide: 2,
@@ -114,7 +114,7 @@
           prev: '#prev-btn',
           autoSlide: true
         });
-      })
+      });
     </script>
   </body>
 </html>
